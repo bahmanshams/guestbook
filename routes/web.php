@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'SignaturesController@index')->name('home');
+
+Route::get('sign', 'SignaturesController@create')->name('sign');
