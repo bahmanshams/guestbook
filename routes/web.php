@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', 'SignaturesController@index')->name('home');
+Route::get('/', 'SignatureController@index')->name('home');
 
-Route::get('sign', 'SignaturesController@create')->name('sign');
+Route::get('sign', 'SignatureController@create')->name('sign');
