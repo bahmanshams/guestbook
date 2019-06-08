@@ -1,9 +1,10 @@
 <?php namespace App\Http\Resources;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Http\Resources\Json\Resource;
 
-class SignatureResource extends JsonResource
+class SignatureResource extends Resource
 {
     /**
      * Transform the resource into an array.
@@ -14,11 +15,11 @@ class SignatureResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $request->id,
-            'name' => $request->name,
-            'avatar' => $request->avatar,
-            'body' => $request->body,
-            'date' => $request->created_at->diffForHumans(),
+            'id' => $this->id,
+            'name' => $this->name,
+            'avatar' => $this->avatar,
+            'body' => $this->body,
+            'date' => Carbon::parse($this->created_at)->diffForHumans(),
         ];
     }
 }

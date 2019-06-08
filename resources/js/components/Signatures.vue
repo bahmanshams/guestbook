@@ -1,11 +1,11 @@
 <template>
     <div>
-        <div class="panel panel-default" v-for="signature in signatures">
-            <div class="panel-heading">
+        <div class="card" v-for="signature in signatures">
+            <div class="card-header">
                 <span class="glyphicon glyphicon-user" id="start"></span>
                 <label id="started">By</label> {{ signature.name }}
             </div>
-            <div class="panel-body">
+            <div class="card-body">
                 <div class="col-md-2">
                     <div class="thumbnail">
                         <img :src="signature.avatar" :alt="signature.name">
@@ -13,7 +13,7 @@
                 </div>
                 <p>{{ signature.body }}</p>
             </div>
-            <div class="panel-footer">
+            <div class="card-footer">
                 <span class="glyphicon glyphicon-calendar" id="visit"></span> {{ signature.date }} |
                 <span class="glyphicon glyphicon-flag" id="comment"></span>
                 <a href="#" id="comments" @click="report(signature.id)">Report</a>

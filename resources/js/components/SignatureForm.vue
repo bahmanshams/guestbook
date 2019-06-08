@@ -46,8 +46,8 @@
                     </div>
 
                     <div class="form-group">
-                        <div class="col-md-12 text-right">
-                            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                        <div class="col-md-12 float-right">
+                            <button type="submit" class="btn btn-outline-primary btn-lg">Submit</button>
                         </div>
                     </div>
                 </fieldset>

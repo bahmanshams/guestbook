@@ -1,8 +1,10 @@
 <?php namespace App\Http\Controllers\Api;
 
+use App\Http\Resources\SignatureResource;
 use App\Signature;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Support\Collection;
 use Illuminate\Validation\ValidationException;
 
@@ -11,13 +13,14 @@ class SignatureController extends Controller
     /**
      * Return a paginated list of signatures.
      *
-     * @return collection
+     * @return AnonymousResourceCollection|Collection
      */
     public function index()
     {
-        $signatures = Signature::latest()->ignoreFlagged()->pagginate(20);
+//        dd(Signature::latest()->paginate(1)->items()[0]->toArray());
+//        $signatures = Signature::latest()->ignoreFlagged()->paginate(20);
 
-        return SignatureResource::collection($signatures);
+        return SignatureResource::collection(Signature::latest()->paginate(1));
     }
 
     /**

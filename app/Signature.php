@@ -1,5 +1,6 @@
 <?php namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -14,6 +15,11 @@ class Signature extends Model
      * @var array
      */
     protected $fillable = ['name', 'email', 'body', 'flagged_at'];
+
+    /**
+     * @var array
+     */
+    protected $dates = ['created_at', 'updated_at'];
 
     /**
      * Ignore flagged signatures.
@@ -33,7 +39,7 @@ class Signature extends Model
      */
     public function flag()
     {
-        return $this->update(['flagged_at' => \carbon\carbon::now()]);
+        return $this->update(['flagged_at' => carbon::now()]);
     }
 
     public function getAvatarAttribute()

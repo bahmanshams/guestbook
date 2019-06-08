@@ -16,7 +16,7 @@ class ReportSignature extends Controller
      */
     public function update(Signature $signature)
     {
-        $signature->flagg();
+        $signature->flag();
 
         return $signature;
     }

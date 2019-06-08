@@ -37450,10 +37450,13 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "form-group" }, [
-      _c("div", { staticClass: "col-md-12 text-right" }, [
+      _c("div", { staticClass: "col-md-12 float-right" }, [
         _c(
           "button",
-          { staticClass: "btn btn-primary btn-lg", attrs: { type: "submit" } },
+          {
+            staticClass: "btn btn-outline-primary btn-lg",
+            attrs: { type: "submit" }
+          },
           [_vm._v("Submit")]
         )
       ])
@@ -37485,8 +37488,8 @@ var render = function() {
     "div",
     [
       _vm._l(_vm.signatures, function(signature) {
-        return _c("div", { staticClass: "panel panel-default" }, [
-          _c("div", { staticClass: "panel-heading" }, [
+        return _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-header" }, [
             _c("span", {
               staticClass: "glyphicon glyphicon-user",
               attrs: { id: "start" }
@@ -37496,7 +37499,7 @@ var render = function() {
             _vm._v(" " + _vm._s(signature.name) + "\n        ")
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "panel-body" }, [
+          _c("div", { staticClass: "card-body" }, [
             _c("div", { staticClass: "col-md-2" }, [
               _c("div", { staticClass: "thumbnail" }, [
                 _c("img", {
@@ -37508,7 +37511,7 @@ var render = function() {
             _c("p", [_vm._v(_vm._s(signature.body))])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "panel-footer" }, [
+          _c("div", { staticClass: "card-footer" }, [
             _c("span", {
               staticClass: "glyphicon glyphicon-calendar",
               attrs: { id: "visit" }
@@ -49706,9 +49709,13 @@ module.exports = function(module) {
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_Signatures__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Signatures */ "./resources/js/components/Signatures.vue");
+/* harmony import */ var _components_SignatureForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/SignatureForm */ "./resources/js/components/SignatureForm.vue");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -49737,8 +49744,14 @@ Vue.component('paginate', __webpack_require__(/*! vuejs-paginate */ "./node_modu
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+
+
 var app = new Vue({
-  el: '#app'
+  el: '#app',
+  components: {
+    Signatures: _components_Signatures__WEBPACK_IMPORTED_MODULE_0__["default"],
+    SignatureForm: _components_SignatureForm__WEBPACK_IMPORTED_MODULE_1__["default"]
+  }
 });
 
 /***/ }),
